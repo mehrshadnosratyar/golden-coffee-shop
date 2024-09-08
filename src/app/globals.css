@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body {
+.coffee-bg {
   background-image: url("../assets/images/headerBgDesktop.png");
   background-repeat: no-repeat;
   background-size: cover;
