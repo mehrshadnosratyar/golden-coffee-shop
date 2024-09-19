@@ -53,6 +53,7 @@ export default function RootLayout({
         dir="rtl"
         className={`${dana.variable} ${morabba.variable} font-Dana`}
       >
+        <Header />
         {children}
       </body>
     </html>
