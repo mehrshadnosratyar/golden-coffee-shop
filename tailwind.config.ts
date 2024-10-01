@@ -3,6 +3,16 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   content: ["./src/**/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: "1rem",
+        sm: "5rem",
+        lg: "12rem",
+        xl: "17rem",
+        "2xl": "18rem",
+      },
+    },
     extend: {
       fontFamily: {
         Dana: "var(--dana-font)",
