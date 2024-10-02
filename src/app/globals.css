@@ -9,4 +9,5 @@
 .pattern-bg {
   background-image: url("../assets/images/body-bg.png");
   background-repeat: no-repeat;
+  background-size: cover;
 }

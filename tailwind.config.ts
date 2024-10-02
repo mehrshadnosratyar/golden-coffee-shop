@@ -9,8 +9,8 @@ const config: Config = {
         DEFAULT: "1rem",
         sm: "5rem",
         lg: "12rem",
-        xl: "17rem",
-        "2xl": "18rem",
+        xl: "15rem",
+        "2xl": "16rem",
       },
     },
     extend: {
