@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { Fragment } from "react";
+import ProductRate from "./ProductRate";
+import AddToCart from "./AddToCart";
 
 export interface Product {
   id: number;
@@ -24,7 +26,7 @@ export default function ProductCard({
   return (
     <div
       key={key}
-      className="bg-white grid place-content-center w-60 rounded-xl shadow-sm p-5 space-y-2 relative"
+      className="bg-white grid place-content-center w-60 rounded-xl shadow-lg p-5 space-y-4 relative"
     >
       <div className="grid place-content-center">
         <Image
@@ -47,7 +49,7 @@ export default function ProductCard({
               <p className="flex items-baseline gap-0.5 text-gray-300 relative">
                 <span>{product.sell_price}</span>
                 <span className="text-sm">تومان</span>
-                <div className="h-3 border-t border-red-400 w-full absolute top-1/2 bottom-1/2"></div>
+                <span className="h-3 border-t-2 border-red-400 w-full absolute top-1/2 bottom-1/2"></span>
               </p>
             </div>
             <span className="absolute text-center flex items-end pt-0.5 px-1.5 rounded-xl bg-orange-300 text-base font-semibold right-4 top-4">
@@ -63,6 +65,10 @@ export default function ProductCard({
       ) : (
         <p className="text-red-400">فعلا موجود نیست</p>
       )}
+      <div className="flex items-end justify-between w-full">
+        <AddToCart />
+        <ProductRate rate={product.rate} />
+      </div>
     </div>
   );
 }
