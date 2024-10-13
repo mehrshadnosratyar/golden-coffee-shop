@@ -37,7 +37,7 @@ export default async function ProductsSection() {
             </svg>
           </Link>
         </div>
-        <div className="grid grid-cols-4 gap-x-4 gap-y-7 mt-5 place-content-between">
+        <div className="grid grid-cols-2 xl:grid-cols-4 md:grid-cols-3 gap-y-7 mt-5">
           {products.map((product) => (
             <ProductCard product={product} key={product.id} />
           ))}

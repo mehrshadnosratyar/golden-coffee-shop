@@ -7,8 +7,9 @@ const config: Config = {
       center: true,
       padding: {
         DEFAULT: "1rem",
-        sm: "5rem",
-        lg: "12rem",
+        sm: "3rem",
+        md: "4rem",
+        lg: "5rem",
         xl: "15rem",
         "2xl": "16rem",
       },

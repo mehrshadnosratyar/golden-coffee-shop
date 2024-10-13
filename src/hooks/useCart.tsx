@@ -1,4 +1,5 @@
 import { Product } from "@/components/ProductCard";
+import toast from "react-hot-toast";
 import { create } from "zustand";
 type CartHandle = {
   items: Product[];
@@ -15,17 +16,26 @@ export const useCartStore = create<CartHandle>((set) => ({
   itemsCounter: 0,
   addItem: (product) =>
     set((state) => {
+      if (product.quantity < 1) {
+        toast.error("این محصول موجود نمی باشد");
+        return {};
+      }
       if (!state.items.find((item) => item.id === product.id)) {
         state.items.push({ ...product, cart_quantity: 1 });
-        console.log(state.items);
         return { items: state.items };
       }
-      return state;
+      return {};
     }),
   increase: (product) =>
     set((state) => {
+      if (
+        state.items.find((item) => item.id === product.id)?.cart_quantity! >=
+        product.quantity
+      ) {
+        toast.error("موجودی این محصول بیشتر نمی باشد");
+        return {};
+      }
       const index = state.items.findIndex((item) => item.id === product.id);
-      console.log(index);
       if (index !== -1) {
         state.items[index].cart_quantity!++;
         return { items: state.items };

@@ -8,7 +8,7 @@ export default function AddToCart({ product }: { product: Product }) {
   const productInCart = items.find((item) => item.id === product.id);
   // console.log(items);
   return !!productInCart ? (
-    <div className="p-1 transition-all rounded-xl border-2 border-gray-300 flex items-center gap-3 [&>div_svg]:text-gray-500">
+    <div className="p-1 transition-all duration-1000 rounded-xl border-2 border-gray-300 flex items-center gap-3 [&>div_svg]:text-gray-500">
       <div
         className="p-1 hover:bg-gray-300 rounded-full transition-all"
         onClick={() => increase(product)}
@@ -53,7 +53,7 @@ export default function AddToCart({ product }: { product: Product }) {
         </div>
       ) : (
         <div
-          className="p-1 hover:bg-gray-300 rounded-full transition-all"
+          className="p-1 hover:bg-gray-300 rounded-full transition-all duration-1000"
           onClick={() => decrease(product)}
         >
           <svg

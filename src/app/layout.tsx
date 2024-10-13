@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/layout/Header";
 import localFont from "next/font/local";
+import { Toaster } from "react-hot-toast";
 
 const dana = localFont({
   src: [
@@ -53,6 +54,9 @@ export default function RootLayout({
         dir="rtl"
         className={`${dana.variable} ${morabba.variable} font-Dana`}
       >
+        <div>
+          <Toaster />
+        </div>
         <Header />
         {children}
       </body>
