@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Fragment } from "react";
 import ProductRate from "./ProductRate";
 import AddToCart from "./AddToCart";
+import useCart from "@/hooks/useCart";
 
 export interface Product {
   id: number;
@@ -14,6 +15,7 @@ export interface Product {
   image: string;
   rate: number;
   discount_percent: number | null;
+  cart_quantity?: number;
 }
 
 export default function ProductCard({
@@ -66,7 +68,7 @@ export default function ProductCard({
         <p className="text-red-400">فعلا موجود نیست</p>
       )}
       <div className="flex items-end justify-between w-full">
-        <AddToCart />
+        <AddToCart product={product} />
         <ProductRate rate={product.rate} />
       </div>
     </div>
