@@ -7,12 +7,15 @@ const config: Config = {
       center: true,
       padding: {
         DEFAULT: "1rem",
-        sm: "3rem",
-        md: "4rem",
-        lg: "5rem",
-        xl: "15rem",
-        "2xl": "16rem",
+        lg: "0.625rem",
       },
+    },
+    screens: {
+      xs: "400px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
     },
     extend: {
       fontFamily: {

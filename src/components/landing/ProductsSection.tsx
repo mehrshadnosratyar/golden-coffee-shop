@@ -10,7 +10,7 @@ export default async function ProductsSection() {
   ).json();
   return (
     <section className="pattern-bg text-zinc-700">
-      <div className="container pt-48">
+      <div className="container pt-32">
         <div className="flex justify-between items-end">
           <div className="font-Morabba space-y-3">
             <span className="font-medium text-5xl">جدیدترین محصولات</span>
@@ -37,7 +37,7 @@ export default async function ProductsSection() {
             </svg>
           </Link>
         </div>
-        <div className="grid grid-cols-2 xl:grid-cols-4 md:grid-cols-3 gap-y-7 mt-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-y-5 mt-5 place-items-center">
           {products.map((product) => (
             <ProductCard product={product} key={product.id} />
           ))}
