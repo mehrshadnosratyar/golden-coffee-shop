@@ -11,3 +11,7 @@ export const sumProducts = (products: Product[]) => {
   );
   return { itemsCount, total };
 };
+
+export function formatNumbersWithCommas(price: string) {
+  return price.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}

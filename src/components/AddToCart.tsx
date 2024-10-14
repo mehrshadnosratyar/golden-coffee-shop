@@ -9,7 +9,7 @@ export default function AddToCart({ product }: { product: Product }) {
     useCartStore();
   const productInCart = items.find((item) => item.id === product.id);
   return !!productInCart ? (
-    <div className="p-1 transition-all duration-1000 rounded-xl border-2 border-gray-300 flex items-center gap-3 [&>div_svg]:text-gray-500">
+    <div className="p-1 transition-all duration-1000 rounded-full border-2 border-gray-300 flex items-center gap-3 [&>div_svg]:text-orange-400">
       <div
         className="p-1 hover:bg-gray-300 rounded-full transition-all"
         onClick={() => increase(product)}
@@ -29,7 +29,7 @@ export default function AddToCart({ product }: { product: Product }) {
           />
         </svg>
       </div>
-      <p className="font-semibold text-xl text-orange-600">
+      <p className="font-semibold text-xl text-orange-400">
         {productInCart.cart_quantity}
       </p>
       {productInCart?.cart_quantity === 1 ? (

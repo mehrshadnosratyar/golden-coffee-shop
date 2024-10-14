@@ -11,3 +11,20 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
+
+html,
+body,
+.no-scrollbar {
+  /* Hide scrollbars */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  overflow: -moz-scrollbars-none; /* Old Firefox */
+
+  /* Ensure scrolling is still possible */
+  overflow-y: scroll;
+}
+
+/* Hide scrollbars for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
