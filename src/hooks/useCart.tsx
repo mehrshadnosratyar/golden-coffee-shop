@@ -1,10 +1,11 @@
 import { Product } from "@/components/ProductCard";
+import { sumProducts } from "@/helper/helper";
 import toast from "react-hot-toast";
 import { create } from "zustand";
 type CartHandle = {
   items: Product[];
   total: number;
-  itemsCounter: number;
+  itemsCount: number;
   addItem: (product: Product) => void;
   increase: (product: Product) => void;
   decrease: (product: Product) => void;
@@ -13,7 +14,7 @@ type CartHandle = {
 export const useCartStore = create<CartHandle>((set) => ({
   items: [],
   total: 0,
-  itemsCounter: 0,
+  itemsCount: 0,
   addItem: (product) =>
     set((state) => {
       if (product.quantity < 1) {
@@ -22,7 +23,7 @@ export const useCartStore = create<CartHandle>((set) => ({
       }
       if (!state.items.find((item) => item.id === product.id)) {
         state.items.push({ ...product, cart_quantity: 1 });
-        return { items: state.items };
+        return { items: state.items, ...sumProducts(state.items) };
       }
       return {};
     }),
@@ -38,7 +39,7 @@ export const useCartStore = create<CartHandle>((set) => ({
       const index = state.items.findIndex((item) => item.id === product.id);
       if (index !== -1) {
         state.items[index].cart_quantity!++;
-        return { items: state.items };
+        return { items: state.items, ...sumProducts(state.items) };
       }
       return {};
     }),
@@ -51,7 +52,7 @@ export const useCartStore = create<CartHandle>((set) => ({
         state.items[index]?.cart_quantity > 1
       ) {
         state.items[index].cart_quantity!--;
-        return { items: state.items };
+        return { items: state.items, ...sumProducts(state.items) };
       }
       return {};
     }),
@@ -60,7 +61,7 @@ export const useCartStore = create<CartHandle>((set) => ({
       const index = state.items.findIndex((item) => item.id === product.id);
       if (index !== -1) {
         state.items.splice(index, 1);
-        return { items: state.items };
+        return { items: state.items, ...sumProducts(state.items) };
       }
       return {};
     }),

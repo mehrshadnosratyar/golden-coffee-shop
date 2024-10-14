@@ -2,11 +2,12 @@
 import { useCartStore } from "@/hooks/useCart";
 import { Product } from "./ProductCard";
 import { useEffect } from "react";
+import { sumProducts } from "@/helper/helper";
 
 export default function AddToCart({ product }: { product: Product }) {
-  const { items, addItem, increase, decrease, deleteItem } = useCartStore();
+  const { items, addItem, increase, decrease, deleteItem, total, itemsCount } =
+    useCartStore();
   const productInCart = items.find((item) => item.id === product.id);
-  // console.log(items);
   return !!productInCart ? (
     <div className="p-1 transition-all duration-1000 rounded-xl border-2 border-gray-300 flex items-center gap-3 [&>div_svg]:text-gray-500">
       <div

@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Fragment } from "react";
 import ProductRate from "./ProductRate";
 import AddToCart from "./AddToCart";
-import useCart from "@/hooks/useCart";
 
 export interface Product {
   id: number;
