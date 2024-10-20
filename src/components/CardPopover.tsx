@@ -84,8 +84,12 @@ export default function CardPopover({ className }: { className?: string }) {
                     <div className="space-y-1">
                       {product.discount_percent && (
                         <p className="text-sm text-emerald-600">
-                          {formatNumbersWithCommas(product.off_price)} تومان
-                          تخفیف
+                          {formatNumbersWithCommas(
+                            (
+                              +product.sell_price - +product.off_price
+                            ).toString()
+                          )}{" "}
+                          تومان تخفیف
                         </p>
                       )}
 

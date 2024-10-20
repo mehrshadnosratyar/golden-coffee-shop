@@ -1,4 +1,4 @@
-import { Product } from "@/components/ProductCard";
+import { Product } from "@/types/GeneralTypes";
 
 export const sumProducts = (products: Product[]) => {
   const itemsCount = products.reduce(

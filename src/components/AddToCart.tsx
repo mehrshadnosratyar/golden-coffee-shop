@@ -1,8 +1,8 @@
 "use client";
 import { useCartStore } from "@/hooks/useCart";
-import { Product } from "./ProductCard";
 import { useEffect } from "react";
 import { sumProducts } from "@/helper/helper";
+import { Product } from "@/types/GeneralTypes";
 
 export default function AddToCart({ product }: { product: Product }) {
   const { items, addItem, increase, decrease, deleteItem, total, itemsCount } =

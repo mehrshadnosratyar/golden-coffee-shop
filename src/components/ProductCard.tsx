@@ -2,20 +2,8 @@ import Image from "next/image";
 import { Fragment } from "react";
 import ProductRate from "./ProductRate";
 import AddToCart from "./AddToCart";
-
-export interface Product {
-  id: number;
-  name: string;
-  name_en: string;
-  weight: string;
-  sell_price: string;
-  off_price: string;
-  quantity: number;
-  image: string;
-  rate: number;
-  discount_percent: number | null;
-  cart_quantity?: number;
-}
+import { formatNumbersWithCommas } from "@/helper/helper";
+import { Product } from "@/types/GeneralTypes";
 
 export default function ProductCard({
   product,
@@ -44,11 +32,13 @@ export default function ProductCard({
           <Fragment>
             <div className="flex items-center gap-2 ">
               <p className="flex items-baseline gap-0.5 text-emerald-600">
-                <span className="font-semibold">{product.off_price}</span>
+                <span className="font-semibold">
+                  {formatNumbersWithCommas(product.off_price)}
+                </span>
                 <span className="text-sm">تومان</span>
               </p>
               <p className="flex items-baseline gap-0.5 text-gray-300 relative">
-                <span>{product.sell_price}</span>
+                <span>{formatNumbersWithCommas(product.sell_price)}</span>
                 <span className="text-sm">تومان</span>
                 <span className="h-3 border-t-2 border-red-400 w-full absolute top-1/2 bottom-1/2"></span>
               </p>

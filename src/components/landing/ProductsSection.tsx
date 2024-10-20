@@ -1,7 +1,8 @@
 import Link from "next/link";
 import React from "react";
-import ProductCard, { Product } from "../ProductCard";
+import ProductCard from "../ProductCard";
 import Image from "next/image";
+import { Product } from "@/types/GeneralTypes";
 export default async function ProductsSection() {
   const products: Product[] = await (
     await fetch("http://localhost:3000/api/products", {
