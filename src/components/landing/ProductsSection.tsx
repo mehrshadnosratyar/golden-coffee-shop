@@ -11,15 +11,17 @@ export default async function ProductsSection() {
   ).json();
   return (
     <section className="pattern-bg text-zinc-700">
-      <div className="container pt-32">
-        <div className="flex justify-between items-end">
+      <div className="container pt-10 md:pt-32">
+        <h2 className="font-medium text-4xl md:text-5xl w-max font-Morabba mb-5">
+          جدیدترین محصولات
+        </h2>
+        <div className="flex justify-between items-end text-lg">
           <div className="font-Morabba space-y-3">
-            <span className="font-medium text-5xl">جدیدترین محصولات</span>
-            <p className="font-light text-2xl">فرآوری شده ازدانه قهوه</p>
+            <p className="font-light md:text-2xl">فرآوری شده ازدانه قهوه</p>
           </div>
           <Link
             href={"/products"}
-            className="flex items-center text-orange-300"
+            className="flex items-center text-orange-300 text-lg"
           >
             <span>نمایش همه محصولات</span>
             <svg

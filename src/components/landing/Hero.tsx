@@ -2,8 +2,8 @@ import HeroTitle from "./HeroTitle";
 
 export default function Hero() {
   return (
-    <div className="min-h-screen coffee-bg">
-      <HeroTitle className="absolute left-72 top-64" />
+    <div className="min-h-[300px] md:min-h-screen coffee-bg flex items-center justify-end px-10 lg:px-40">
+      <HeroTitle />
     </div>
   );
 }

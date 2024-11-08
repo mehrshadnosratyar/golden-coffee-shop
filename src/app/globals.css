@@ -2,16 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 .coffee-bg {
-  background-image: url("../assets/images/headerBgDesktop.png");
+  background-image: url("../assets/images/headerBgMobile.webp");
   background-repeat: no-repeat;
   background-size: cover;
 }
 .pattern-bg {
-  background-image: url("../assets/images/body-bg.png");
+  background-image: none;
   background-repeat: no-repeat;
   background-size: contain;
 }
-
+@media screen and (min-width: 768px) {
+  .coffee-bg {
+    background-image: url("../assets/images/headerBgDesktop.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .pattern-bg {
+    background-image: url("../assets/images/body-bg.png");
+  }
+}
 html,
 body,
 .no-scrollbar {
@@ -27,4 +36,9 @@ body,
 /* Hide scrollbars for Chrome, Safari and Opera */
 body::-webkit-scrollbar {
   display: none;
+}
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
 }
