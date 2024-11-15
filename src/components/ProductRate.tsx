@@ -14,7 +14,7 @@ export default function ProductRate({ rate }: { rate: number }) {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="size-5"
+          className="size-4 md:size-5"
         >
           <path
             fillRule="evenodd"
@@ -30,7 +30,7 @@ export default function ProductRate({ rate }: { rate: number }) {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="size-5"
+          className="size-4 md:size-5"
         >
           <path
             strokeLinecap="round"

@@ -15,7 +15,7 @@ export default function ProductCard({
   return (
     <div
       key={key}
-      className="bg-white grid place-content-center w-52 md:w-60 rounded-xl shadow-lg p-5 space-y-4 relative"
+      className="bg-white grid place-content-center w-48 *:text-xs md:*:text-base md:w-60 rounded-xl shadow-lg p-3 md:p-5 space-y-4 relative"
     >
       <div className="grid place-content-center">
         <Image

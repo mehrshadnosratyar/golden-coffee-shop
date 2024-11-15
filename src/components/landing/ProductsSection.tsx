@@ -1,8 +1,8 @@
 import Link from "next/link";
 import React from "react";
 import ProductCard from "../ProductCard";
-import Image from "next/image";
 import { Product } from "@/types/GeneralTypes";
+import { ChevronLeftIcon } from "@heroicons/react/24/solid";
 export default async function ProductsSection() {
   const products: Product[] = await (
     await fetch("http://localhost:3000/api/products", {
@@ -24,23 +24,10 @@ export default async function ProductsSection() {
             className="flex items-center text-orange-300 text-lg"
           >
             <span>نمایش همه محصولات</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-4"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15.75 19.5 8.25 12l7.5-7.5"
-              />
-            </svg>
+            <ChevronLeftIcon className="size-4" />
           </Link>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-y-5 mt-5 place-items-center">
+        <div className="grid justify-between grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-y-5 mt-5 place-items-center">
           {products.map((product) => (
             <ProductCard product={product} key={product.id} />
           ))}
